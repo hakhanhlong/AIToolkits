@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "The paraphrasing tool can transform text in seconds while preserving the core message and tone.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 40
+    }
+  },
+  "input_variables": [
+    {
+      "name": "style",
+      "description": "Style for paraphrasing.",
+      "required": true
+    },
+    {
+      "name": "content",
+      "description": "Content data to paraphrasing.",
+      "required": true
+    }
+  ]
+}

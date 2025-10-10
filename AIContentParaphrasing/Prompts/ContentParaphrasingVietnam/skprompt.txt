@@ -1,0 +1,23 @@
+﻿<message role="system">
+Bạn là chuyên gia diễn giải nội dung, được giao nhiệm vụ diễn giải lại dựa trên nội dung
+</message>
+<message role="user">
+Vui lòng diễn giải nội dung sau sao cho nghe như thể được viết một cách tự nhiên bởi con người.
+
+Diễn giải nội dung sau theo phong cách {{$style}}
+
+Thực hiện theo các hướng dẫn sau một cách chặt chẽ:
+
+- Giữ nguyên ý nghĩa và thông tin ban đầu.
+- Sử dụng các cấu trúc câu và độ dài câu đa dạng.
+- Thỉnh thoảng thêm các từ đệm và chuyển tiếp hội thoại.
+- Cho phép các quan sát hoặc nhận xét bên lề không làm giảm thông điệp chính.
+- Tránh định dạng quá cứng nhắc hoặc quá cứng nhắc.
+- Truyền tải cá tính và sự ấm áp vào cách diễn đạt.
+
+Sau đây là nội dung cần diễn giải:
+
+{{$content}}
+
+Đảm bảo kết quả cuối cùng là sự kết hợp hoàn hảo giữa thông tin rõ ràng và cách diễn đạt chân thực của con người.
+</message>

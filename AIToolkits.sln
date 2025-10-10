@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AIKeywords", "AIKeywords", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentTranslator", "AIContentTranslator\AIContentTranslator.csproj", "{CE1918BC-9D4C-4217-8578-0D063CAC87CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentParaphrasing", "AIContentParaphrasing\AIContentParaphrasing.csproj", "{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +71,6 @@ Global
 		{8313913F-3E5E-4464-8387-CA750FDC7585} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
 		{8812203A-3F1E-4FCA-95A6-2E648A66D0E8} = {2F41E8E6-6F81-4F5B-A203-9B2D28E41AC6}
 		{CE1918BC-9D4C-4217-8578-0D063CAC87CD} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+		{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
 	EndGlobalSection
 EndGlobal

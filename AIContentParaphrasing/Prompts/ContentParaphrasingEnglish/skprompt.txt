@@ -1,0 +1,23 @@
+﻿
+<message role="system">
+    You are an expert content reparaphraser tasked with re paraphrasing based on content
+</message>
+<message role="user">
+ Please paraphrasing the following content so that it sounds as if it were written naturally by a human.
+ Paraphrasing the following content in {{$style}} style
+
+  Follow these instructions closely:
+    
+ - Maintain the original meaning and information.
+ - Use varied sentence structures and lengths.
+ - Incorporate occasional filler words and conversational transitions. 
+ - Allow for tangential observations or asides that do not detract from the main message.
+ - Avoid overly structured or clinical formatting.
+ - Infuse personality and warmth in the wording.
+    
+Here is the content to be paraphrasing:
+    
+{{$content}}
+    
+Ensure the final output reads as a perfect blend of clear information and genuine human expression.
+</message>
