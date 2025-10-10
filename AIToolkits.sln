@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F5D658EF-CA73-41C9-B0C1-20C9FE8B59A2}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentTitleGenerator", "AIContentTitleGenerator\AIContentTitleGenerator.csproj", "{10AACD2E-F97F-41BF-8EF7-2B3852339236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentSummaryGenerator", "AIContentSummaryGenerator\AIContentSummaryGenerator.csproj", "{C0E745E3-C3BA-46F3-90DF-05625CEE8FFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentSpellGrammaticalCheck", "AIContentSpellGrammaticalCheck\AIContentSpellGrammaticalCheck.csproj", "{7C9C1184-3037-420C-A6A0-CE5A3B62C44F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentAnalyze", "AIContentAnalyze\AIContentAnalyze.csproj", "{8313913F-3E5E-4464-8387-CA750FDC7585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIKeywordAnalyze", "AIKeywordAnalyze\AIKeywordAnalyze.csproj", "{8812203A-3F1E-4FCA-95A6-2E648A66D0E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AIContents", "AIContents", "{14855669-FE41-4B98-BD4A-D8079D82A61F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AIKeywords", "AIKeywords", "{2F41E8E6-6F81-4F5B-A203-9B2D28E41AC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentTranslator", "AIContentTranslator\AIContentTranslator.csproj", "{CE1918BC-9D4C-4217-8578-0D063CAC87CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10AACD2E-F97F-41BF-8EF7-2B3852339236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10AACD2E-F97F-41BF-8EF7-2B3852339236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10AACD2E-F97F-41BF-8EF7-2B3852339236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10AACD2E-F97F-41BF-8EF7-2B3852339236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E745E3-C3BA-46F3-90DF-05625CEE8FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E745E3-C3BA-46F3-90DF-05625CEE8FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E745E3-C3BA-46F3-90DF-05625CEE8FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E745E3-C3BA-46F3-90DF-05625CEE8FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C9C1184-3037-420C-A6A0-CE5A3B62C44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9C1184-3037-420C-A6A0-CE5A3B62C44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9C1184-3037-420C-A6A0-CE5A3B62C44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9C1184-3037-420C-A6A0-CE5A3B62C44F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8313913F-3E5E-4464-8387-CA750FDC7585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8313913F-3E5E-4464-8387-CA750FDC7585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8313913F-3E5E-4464-8387-CA750FDC7585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8313913F-3E5E-4464-8387-CA750FDC7585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8812203A-3F1E-4FCA-95A6-2E648A66D0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8812203A-3F1E-4FCA-95A6-2E648A66D0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8812203A-3F1E-4FCA-95A6-2E648A66D0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8812203A-3F1E-4FCA-95A6-2E648A66D0E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1918BC-9D4C-4217-8578-0D063CAC87CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10AACD2E-F97F-41BF-8EF7-2B3852339236} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+		{C0E745E3-C3BA-46F3-90DF-05625CEE8FFB} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+		{7C9C1184-3037-420C-A6A0-CE5A3B62C44F} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+		{8313913F-3E5E-4464-8387-CA750FDC7585} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+		{8812203A-3F1E-4FCA-95A6-2E648A66D0E8} = {2F41E8E6-6F81-4F5B-A203-9B2D28E41AC6}
+		{CE1918BC-9D4C-4217-8578-0D063CAC87CD} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+	EndGlobalSection
+EndGlobal

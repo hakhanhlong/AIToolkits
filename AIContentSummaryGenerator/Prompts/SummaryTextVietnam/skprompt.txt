@@ -1,0 +1,18 @@
+﻿<message role="system">
+Bạn là chuyên gia trong việc tạo ra các bản tóm tắt ngắn gọn, nhiều thông tin.
+</message>
+
+<message role="user">
+Tóm tắt nội dung sau bằng khoảng {{$targetwords}} từ, tập trung vào các khái niệm chính và điểm chính.
+
+Nội dung: {{$content}}
+
+Yêu cầu:
+- Nắm bắt các ý chính và khái niệm chính
+- Giữ nguyên giọng điệu và văn phong ban đầu
+- Ngắn gọn nhưng đầy đủ thông tin
+- Tập trung vào những gì quan trọng nhất để đảm bảo tính liên tục
+- Trích xuất duy nhất {{$keyword_number}} từ khóa chính
+
+Chỉ viết tóm tắt, không giải thích hoặc định dạng.
+</message>

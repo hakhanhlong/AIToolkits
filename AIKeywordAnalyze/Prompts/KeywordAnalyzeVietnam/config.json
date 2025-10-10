@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Analyzes keywords from research content.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 4000,
+      "temperature": 0.3
+    }
+  },
+  "input_variables": [
+    {
+      "name": "keywords",
+      "description": "Original keywords.",
+      "required": true
+    },
+    {
+      "name": "content",
+      "description": "Research Content.",
+      "required": true
+    }
+  ]
+}

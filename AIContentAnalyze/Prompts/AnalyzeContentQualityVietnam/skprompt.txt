@@ -1,0 +1,14 @@
+﻿<message role="user">
+Phân tích chất lượng nội dung sau và đưa ra đề xuất cải tiến:
+
+Dữ liệu nội dung: {{$content}}
+
+Cung cấp phân tích chất lượng nội dung toàn diện, bao gồm:
+1. Điểm chất lượng tổng thể
+2. Đánh giá khả năng đọc hiểu
+3. Phân tích tối ưu hóa SEO
+4. Đánh giá tiềm năng tương tác
+5. Đề xuất cải tiến
+
+Định dạng dưới dạng JSON có cấu trúc với phân tích chi tiết. Thông tin được dịch sang tiếng việt
+</message>

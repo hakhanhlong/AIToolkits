@@ -1,0 +1,6 @@
+@AIContentSpellGrammaticalCheck_HostAddress = http://localhost:5182
+
+GET {{AIContentSpellGrammaticalCheck_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

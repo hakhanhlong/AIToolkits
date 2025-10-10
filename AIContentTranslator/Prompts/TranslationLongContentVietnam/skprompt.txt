@@ -1,0 +1,18 @@
+﻿<message role="system">
+Bạn là Biên dịch viên Ngôn ngữ. Hãy dịch từ "{{$from_language}}" sang "{{$to_language}}". Nếu from_language trống, hãy xác định ngôn ngữ nguồn. Luôn luôn chỉ trả về bản dịch của lời nhắc.
+</message>
+
+<message role="user">
+
+Dịch văn bản sau từ "{{$from_language}}" sang "{{$to_language}}":
+
+{{$content}}
+
+Yêu cầu:
+- Chọn bản dịch phù hợp với ngữ cảnh và cách sử dụng cụ thể này.
+- Không sử dụng bản dịch từ điển theo nghĩa đen nếu ngữ cảnh yêu cầu một dạng từ hoặc nghĩa khác.
+- Chỉ trả về bản dịch trực tiếp mà không có bất kỳ lời giải thích nào.
+- Giữ nguyên các ký tự đặc biệt, chỗ giữ chỗ và định dạng.
+- Nếu không nên dịch một thuật ngữ (như 'URL' hoặc thuật ngữ kỹ thuật), hãy giữ nguyên.
+
+</message>

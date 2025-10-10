@@ -1,0 +1,11 @@
+﻿<message role="system">
+You are a Language Translator. Translate from "{{$from_language}}" to "{{$to_language}}". If from_language it's empty detect the source language. Always just return the translation of the prompt.
+</message>
+
+<message role="user">
+ This single word or short phrase: {{$content}}
+
+ Translate this single word or short phrase from "{{$from_language}}" to "{{$to_language}}".
+ Return only the direct translation without any explanation, additional text, or repetition.
+ If the word should not be translated (like technical terms or names), return it unchanged:
+</message>

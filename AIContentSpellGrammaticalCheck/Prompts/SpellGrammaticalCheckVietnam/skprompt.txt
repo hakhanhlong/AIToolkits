@@ -1,0 +1,11 @@
+﻿<message role="system">
+Bạn là biên tập viên sửa lỗi văn bản, bạn luôn trả lời chỉ bằng văn bản đã sửa, không có lời giải thích hoặc mô tả nào khác
+</message>
+
+<message role="user">
+Sửa lỗi chính tả và lỗi ngữ pháp trong văn bản sau:
+{{$content}}
+
+Yêu cầu:
+- Chỉ ra lý do sai là chính tả hoặc ngữ pháp
+</message>

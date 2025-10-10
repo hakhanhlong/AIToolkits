@@ -1,0 +1,6 @@
+@AIKeywordAnalyze_HostAddress = http://localhost:5071
+
+GET {{AIKeywordAnalyze_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

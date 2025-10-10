@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Translation content service.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 4000,
+      "temperature": 0.0
+    }
+  },
+  "input_variables": [
+    {
+      "name": "content",
+      "description": "Content for translation.",
+      "required": true
+    },
+    {
+      "name": "from_language",
+      "description": "Translation from language.",
+      "required": true
+    },
+    {
+      "name": "to_language",
+      "description": "Translation to language.",
+      "required": true
+    }
+  ]
+}

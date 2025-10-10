@@ -1,0 +1,14 @@
+﻿Generate an optimized newspaper title with relevant keywords based on:
+
+Context: {{$context}}
+Keywords: {{$keywords}}
+
+Requirements:
+- Give {{$keyword_number}} titles
+- Title MUST be LESS than 100 characters
+- Title should be catchy and engaging
+- Optimize for SEO visibility
+- Keep it concise and informative
+- DO NOT use special characters or emojis
+
+

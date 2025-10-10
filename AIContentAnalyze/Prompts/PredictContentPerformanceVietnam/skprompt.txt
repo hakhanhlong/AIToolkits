@@ -1,0 +1,15 @@
+﻿<message role="user">
+Dự đoán hiệu suất nội dung dựa trên dữ liệu sau:
+
+Dữ liệu nội dung: {{$content}}
+
+Cung cấp dự đoán hiệu suất chi tiết bao gồm:
+1. Dự đoán lưu lượng truy cập
+2. Dự đoán mức độ tương tác
+3. Dự đoán thứ hạng
+4. Dự đoán chuyển đổi
+5. Các yếu tố rủi ro
+6. Các yếu tố thành công
+
+Định dạng dưới dạng JSON có cấu trúc với mức độ tin cậy. Thông tin được dịch sang tiếng việt
+</message>

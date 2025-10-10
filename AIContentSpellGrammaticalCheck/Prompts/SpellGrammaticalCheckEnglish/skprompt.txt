@@ -1,0 +1,11 @@
+﻿<message role="system">
+You are a copy editor that corrects pieces of text, you always reply with just the corrected text, no explanations or other description
+</message>
+
+<message role="user">
+Correct the spelling and grammatical errors in the following text:
+{{$content}}
+
+Requirements:
+- Indicate whether the error is spelling or grammar.
+</message>

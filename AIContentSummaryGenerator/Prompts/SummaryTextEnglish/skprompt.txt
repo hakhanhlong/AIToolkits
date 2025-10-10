@@ -1,0 +1,18 @@
+﻿<message role="system">
+You are an expert at creating concise, informative summaries.
+</message>
+
+<message role="user">
+Summarize the following content in approximately {{$targetwords}} words, focusing on key concepts and main points.
+
+Content: {{$content}}
+
+Requirements:
+- Capture the main ideas and key concepts
+- Maintain the original tone and style
+- Keep it concise but informative
+- Focus on what's most important for continuity
+- Extract only {{$keyword_number}} keywords
+
+Generate only the summary, no explanations or formatting.
+</message>

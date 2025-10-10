@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Intelligent text summarization.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 4000,
+      "temperature": 0.3
+    }
+  },
+  "input_variables": [
+    {
+      "name": "targetwords",
+      "description": "The number target words.",
+      "required": true
+    },
+    {
+      "name": "content",
+      "description": "The content for summarization.",
+      "required": true
+    },
+    {
+      "name": "keyword_number",
+      "description": "The list of keywords.",
+      "required": true
+    }
+  ]
+}

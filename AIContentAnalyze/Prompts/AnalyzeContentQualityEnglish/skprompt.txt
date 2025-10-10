@@ -1,0 +1,14 @@
+﻿<message role="user">
+Analyze the quality of the following content and provide improvement suggestions:
+
+Content Data: {{$content}}
+
+Provide comprehensive content quality analysis including:
+1. Overall quality score
+2. Readability assessment
+3. SEO optimization analysis
+4. Engagement potential evaluation
+5. Improvement suggestions
+            
+Format as structured JSON with detailed analysis.
+</message>

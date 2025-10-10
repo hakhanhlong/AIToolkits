@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Generate an optimized newspaper title with relevant keywords.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 1000,
+      "temperature": 0.2
+    }
+  },
+  "input_variables": [
+    {
+      "name": "context",
+      "description": "The context content about newspaper.",
+      "required": true
+    },
+    {
+      "name": "keywords",
+      "description": "The list keywords relavant to content.",
+      "required": true
+    },
+    {
+      "name": "yourrequirement",
+      "description": "More requirement from user input.",
+      "required": false
+    },
+    {
+      "name": "keyword_number",
+      "description": "Number of keyword generator.",
+      "required": true
+    }
+  ]
+}

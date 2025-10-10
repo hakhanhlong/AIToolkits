@@ -1,0 +1,14 @@
+﻿Tạo tiêu đề báo được tối ưu hóa với các từ khóa liên quan dựa trên:
+
+Bối cảnh: {{$context}}
+Từ khóa: {{$keywords}}
+
+Yêu cầu:
+- Đưa ra {{$keyword_number}} tiêu đề
+- Tiêu đề phải dưới 100 ký tự
+- Tiêu đề phải hấp dẫn và lôi cuốn
+- Tối ưu hóa khả năng hiển thị SEO
+- Ngắn gọn và đầy đủ thông tin
+- Không sử dụng ký tự đặc biệt hoặc biểu tượng cảm xúc
+- Chỉ phản hồi các tiêu đề được đề xuất, không giải thích thêm.
+{{$yourrequirement}}

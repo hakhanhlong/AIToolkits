@@ -1,0 +1,29 @@
+﻿<message role="user">
+Analyze the following research content and extract comprehensive keyword insights for: {{$keywords}}
+        
+Research Content:
+{{$content}}  # Limit to avoid token limits
+        
+Extract and analyze:
+1. Primary keywords (main topic terms)
+2. Secondary keywords (related terms, synonyms)
+3. Long-tail opportunities (specific phrases people search for)
+4. Search intent (informational, commercial, navigational, transactional)
+5. Keyword difficulty assessment (1-10 scale)
+6. Content gaps (what competitors are missing)
+7. Semantic keywords (related concepts)
+8. Trending terms (emerging keywords)
+        
+Respond with JSON:
+{
+    "primary": ["keyword1", "keyword2"],
+    "secondary": ["related1", "related2"],
+    "long_tail": ["specific phrase 1", "specific phrase 2"],
+    "search_intent": "informational|commercial|navigational|transactional|politic",
+    "difficulty": 7,
+    "content_gaps": ["gap1", "gap2"],
+    "semantic_keywords": ["concept1", "concept2"],
+    "trending_terms": ["trend1", "trend2"],
+    "analysis_insights": "Brief analysis of keyword landscape"
+}
+</message>

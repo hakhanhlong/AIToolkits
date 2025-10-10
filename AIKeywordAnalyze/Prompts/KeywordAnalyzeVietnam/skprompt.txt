@@ -1,0 +1,29 @@
+﻿<message role="user">
+Phân tích nội dung nghiên cứu sau và trích xuất thông tin chi tiết về từ khóa toàn diện cho: {{$keywords}}
+
+Nội dung nghiên cứu:
+{{$content}}
+
+Trích xuất và phân tích:
+1. Từ khóa chính (thuật ngữ chủ đề chính)
+2. Từ khóa phụ (thuật ngữ liên quan, từ đồng nghĩa)
+3. Cơ hội từ khóa dài (cụm từ cụ thể mà mọi người tìm kiếm)
+4. Ý định tìm kiếm (thông tin, thương mại, điều hướng, giao dịch, chính trị)
+5. Đánh giá độ khó của từ khóa (thang điểm 1-10)
+6. Khoảng trống nội dung (những gì đối thủ cạnh tranh đang thiếu)
+7. Từ khóa ngữ nghĩa (khái niệm liên quan)
+8. Thuật ngữ thịnh hành (từ khóa mới nổi)
+
+Trả lời bằng JSON:
+{
+    "primary": ["keyword1", "keyword2"],
+    "secondary": ["related1", "related2"],
+    "long_tail": ["specific phrase 1", "specific phrase 2"],
+    "search_intent": "Thông tin|Thương mại|Điều hướng|Giao dịch|Chính trị",
+    "difficulty": 7,
+    "content_gaps": ["gap1", "gap2"],
+    "semantic_keywords": ["concept1", "concept2"],
+    "trending_terms": ["trend1", "trend2"],
+    "analysis_insights": "Phân tích ngắn gọn về bối cảnh từ khóa"
+}
+</message>

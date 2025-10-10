@@ -1,0 +1,15 @@
+﻿<message role="user">
+Predict content performance based on the following data:
+            
+Content Data: {{$content}}
+            
+Provide detailed performance predictions including:
+1. Traffic predictions
+2. Engagement predictions
+3. Ranking predictions
+4. Conversion predictions
+5. Risk factors
+6. Success factors
+            
+Format as structured JSON with confidence levels.
+</message>
