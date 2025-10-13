@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Craft a robust prompt template for generating conclusion content.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 8192,
+      "temperature": 0.7
+    }
+  },
+  "input_variables": [
+    {
+      "name": "content",
+      "description": "Content data to conclusion.",
+      "required": true
+    },
+    {
+      "name": "target_audience",
+      "description": "e.x., for Marketer, for Developer",
+      "required": true
+    },
+    {
+      "name": "tone",
+      "description": "Formal,Informal,Enthusiastic,Serious,Empathetic,Humorous,Authoritative,Reflective",
+      "required": true
+    },
+    {
+      "name": "style",
+      "description": "Specify the desired writing style",
+      "required": true
+    },
+    {
+      "name": "conclusion_length",
+      "description": "Specify the desired length of the conclusion.",
+      "required": true
+    },
+    {
+      "name": "number_of_conclusions",
+      "description": "Multiple conclusions for different aspects.",
+      "required": true
+    }
+  ]
+}

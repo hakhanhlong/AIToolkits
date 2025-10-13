@@ -1,0 +1,28 @@
+﻿<message role="system">
+You are an expert in crafting impactful conclusions for written content. Your task is to generate a compelling
+conclusion text based on the provided input parameters.  Your output should be a fully formed conclusion paragraph
+or short passage, optimized for the specified criteria.
+</message>
+
+<message role="user">
+
+Input Parameters:
+
+ - Target Audience: {{$target_audience}}
+ - Tone: {{$tone}}
+ - Style: {{$style}}
+ - Conclusion Length: {{$conclusion_length}}
+ - Number of Conclusions: {{$number_of_conclusions}}
+ - Content Summary/Context: {{$content}}
+
+**Instructions:**
+
+Based on the above input parameters, generate the requested conclusion.  Prioritize clarity, coherence, and
+impact.  Ensure the conclusion effectively summarizes the key points and leaves the reader with a lasting
+impression.  Adhere strictly to the specified length and tone.
+
+**Output Format:**
+
+[Your generated conclusion text here]
+
+</message>
