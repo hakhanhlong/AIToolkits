@@ -9,9 +9,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.SemanticKernel" Version="1.66.0" />
     <PackageReference Include="Microsoft.SemanticKernel.Connectors.Google" Version="1.66.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.66.0-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel.Plugins.Web" Version="1.66.0-alpha" />
     <PackageReference Include="Microsoft.SemanticKernel.Process.Abstractions" Version="1.66.0-alpha" />
     <PackageReference Include="Microsoft.SemanticKernel.Process.Core" Version="1.66.0-alpha" />
     <PackageReference Include="Microsoft.SemanticKernel.Process.LocalRuntime" Version="1.66.0-alpha" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Serilog" Version="4.3.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
@@ -19,9 +22,33 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Steps\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Prompts\" />
+    <Content Update="Prompts\SuggestEnglish\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Prompts\SuggestVietnam\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Prompts\WritingEnglish\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Prompts\WritingVietnam\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Prompts\SuggestEnglish\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Prompts\SuggestVietnam\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Prompts\WritingEnglish\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Prompts\WritingVietnam\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

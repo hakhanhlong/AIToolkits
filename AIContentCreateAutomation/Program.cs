@@ -1,5 +1,6 @@
 using AIContentCreateAutomation;
 using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Plugins.Core;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +28,9 @@ builder.Services.AddSingleton<Kernel>(sk =>
 
     //kernelBuilder.AddOpenAIChatCompletion("llama3.2:3b", new Uri("http://localhost:11434/v1"), apiKey: "", serviceId: "gemma3");
     kernelBuilder.AddGoogleAIGeminiChatCompletion(_geminiModelCode, apiKey: _geminiApiKey);
+
+    kernelBuilder.Services.Configure<AppSettings>(_configuration.GetSection("AppSettings"));
+    kernelBuilder.Plugins.AddFromType<TimePlugin>(pluginName:"datetime");
 
     return kernelBuilder.Build();
 

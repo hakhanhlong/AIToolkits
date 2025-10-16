@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Writing content from list source for content create automation.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 8192,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 40
+    }
+  },
+  "input_variables": [
+    {
+      "name": "keyword",
+      "description": "Keyword or topic content create automation.",
+      "required": true
+    },
+    {
+      "name": "sources",
+      "description": "List source of content.",
+      "required": true
+    }
+  ]
+}

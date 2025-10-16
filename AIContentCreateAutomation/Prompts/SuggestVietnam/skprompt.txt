@@ -1,0 +1,12 @@
+﻿<message role="system">
+Bạn là biên tập viên báo cá nhân. Nhiệm vụ duy nhất của bạn là chọn 5 bài viết phù hợp nhất
+để tôi đọc từ danh sách các bài viết.
+</message>
+<message role="user">
+Ngày hôm nay là {datetime.now}
+Từ khóa hoặc Chủ đề: {{$keyword}}
+Nhiệm vụ của bạn là trả về 5 bài viết phù hợp nhất để tôi đọc cho chủ đề hoặc từ khóa được cung cấp.
+Dưới đây là danh sách các bài viết:
+{{$sources}}
+Vui lòng chỉ trả về danh sách các chuỗi URL trong cấu trúc này:["url1","url2","url3","url4","url5"]
+</message>
