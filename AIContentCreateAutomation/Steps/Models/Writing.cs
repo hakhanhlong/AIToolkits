@@ -14,7 +14,28 @@
         public string Title { get; set; }
         public string Date {  get; set; }
         public List<string> Paragraphs {  get; set; }
-
         public string Summary { get; set; }
     }
+
+
+
+    public class WritingReviseRequest
+    {
+        public string Title { get; set; }
+        public string Date { get; set; }
+        public List<string> Paragraphs { get; set; }
+        public string Summary { get; set; }
+        public List<string> Critiques { get; set; }
+    }
+
+
+    public class WritingReviseResponse
+    {
+        public string Title { get; set; }
+        public string Date { get; set; }
+        public List<string> Paragraphs { get; set; }
+        public string Summary { get; set; }
+        public string Message { get; set; }
+    }
+
 }

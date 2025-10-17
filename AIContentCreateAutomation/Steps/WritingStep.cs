@@ -1,4 +1,5 @@
-﻿using AIContentCreateAutomation.Steps.Models;
+﻿using AIContentCreateAutomation.Steps.Events;
+using AIContentCreateAutomation.Steps.Models;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.Google;
 using Newtonsoft.Json;
@@ -7,24 +8,24 @@ using System.Text.Json;
 namespace AIContentCreateAutomation.Steps
 {
 #pragma warning disable SKEXP0080 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-    public class WritingStep: KernelProcessStep<GoogleSearchResultState>
+    public class WritingStep: KernelProcessStep
     {
 
-        private GoogleSearchResultState _state;
+        //private GoogleSearchResultState _state;
 
-        public override ValueTask ActivateAsync(KernelProcessStepState<GoogleSearchResultState> state)
-        {
-            _state = state.State ?? new GoogleSearchResultState();
+        //public override ValueTask ActivateAsync(KernelProcessStepState<GoogleSearchResultState> state)
+        //{
+        //    _state = state.State ?? new GoogleSearchResultState();
 
-            return base.ActivateAsync(state);
-        }
+        //    return base.ActivateAsync(state);
+        //}
+
+        
 
         [KernelFunction("Writing")]
-        public async Task<WritingResponse> Writing(KernelProcessStepContext context, WritingRequest writingRequest, Kernel _kernel) {
-
+        public async Task Writing(KernelProcessStepContext context, WritingRequest writingRequest, Kernel _kernel) {
 
             
-
             var filterSources = writingRequest.GoogleSearchResults.Where(x => writingRequest.Links.Contains(x.Link)).ToList();
 
 
@@ -65,10 +66,90 @@ namespace AIContentCreateAutomation.Steps
             var response = await promptFunctionFromPrompt.InvokeAsync(_kernel, kernelArguments);
             var responseData = response.GetValue<string>();
 
-            _state.ResponseText = responseData;
+            //_state.ResponseText = responseData;
 
-            return JsonConvert.DeserializeObject<WritingResponse>(responseData);
+            await context.EmitEventAsync(new()
+            {
+                Id = ContentCreateAutomationEvent.CritiqueProcessStep,
+                Data = new CritiqueRequest()
+                {
+                    WritingResponse = JsonConvert.DeserializeObject<WritingResponse>(responseData)
+                },
+                Visibility = KernelProcessEventVisibility.Public
+            });
+
+            return;
         }
+
+
+
+        [KernelFunction("Revise")]
+        public async Task Revise(KernelProcessStepContext context, WritingReviseRequest writingReviseRequest, Kernel _kernel)
+        {
+
+
+            
+
+
+            var promptFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "WritingReviseVietnam", "skprompt.txt");
+            var configFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "WritingReviseVietnam", "config.json");
+
+            // Read prompt content
+            var promptContent = System.IO.File.ReadAllText(promptFilePath);
+
+            // Read and parse config.json
+            var configJson = System.IO.File.ReadAllText(configFilePath);
+            var configOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var config = PromptTemplateConfig.FromJson(configJson);
+
+
+            // Create the function with both prompt and config
+            //var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent, config.ExecutionSettings["default"]);
+            var promptFunctionFromPrompt = _kernel.CreateFunctionFromPrompt(promptContent);
+
+            var kernelArguments = new KernelArguments(new GeminiPromptExecutionSettings
+            {
+                ResponseSchema = typeof(WritingReviseResponse),
+                ResponseMimeType = "application/json",
+                ThinkingConfig = new GeminiThinkingConfig
+                {
+                    ThinkingBudget = 0
+                },
+                MaxTokens = 8192,
+                Temperature = 0.7
+
+            })
+            {
+                ["content"] = JsonConvert.SerializeObject(
+                        new
+                        {
+                            Title = writingReviseRequest.Title,
+                            Paragraphs = writingReviseRequest.Paragraphs,
+                            Summary = writingReviseRequest.Summary,
+                            Critiques = writingReviseRequest.Critiques,
+                        }
+                    )           
+            };
+
+            // Querying the prompt function
+            var response = await promptFunctionFromPrompt.InvokeAsync(_kernel, kernelArguments);
+            var responseData = response.GetValue<string>();
+
+            //_state.ResponseText = responseData;
+
+            //await context.EmitEventAsync(new()
+            //{
+            //    Id = ContentCreateAutomationEvent.CritiqueProcessStep,
+            //    Data = new CritiqueRequest()
+            //    {
+            //        WritingResponse = JsonConvert.DeserializeObject<WritingResponse>(responseData)
+            //    },
+            //    Visibility = KernelProcessEventVisibility.Public
+            //});
+
+            return;
+        }
+
 
     }
 #pragma warning restore SKEXP0080 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.

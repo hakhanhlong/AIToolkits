@@ -9,6 +9,9 @@
 
 
         public static readonly string WritingProcessStep = nameof(WritingProcessStep);
+        public static readonly string WritingProcessStepRevise = nameof(WritingProcessStepRevise);
+
+        public static readonly string CritiqueProcessStep = nameof(CritiqueProcessStep);
 
 
 

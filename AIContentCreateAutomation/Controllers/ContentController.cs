@@ -8,6 +8,7 @@ using System.Text.Json;
 using AIContentCreateAutomation.ViewModels;
 using AIContentCreateAutomation.Steps;
 using AIContentCreateAutomation.Steps.Events;
+using Microsoft.Identity.Client;
 
 namespace AIContentCreateAutomation.Controllers
 {
@@ -41,6 +42,7 @@ namespace AIContentCreateAutomation.Controllers
             var searchStep = process.AddStepFromType<SearchStep>();
             var suggestStep = process.AddStepFromType<SuggestStep>();
             var writingStep = process.AddStepFromType<WritingStep>();
+            var critiqueStep = process.AddStepFromType<CritiqueStep>();
 
 
 
@@ -58,11 +60,14 @@ namespace AIContentCreateAutomation.Controllers
             searchStep.OnEvent(ContentCreateAutomationEvent.SuggestProcessStep)
                 .SendEventTo(new ProcessFunctionTargetBuilder(suggestStep, functionName: "Suggest", parameterName: "suggestRequest"));
 
-
             suggestStep.OnEvent(ContentCreateAutomationEvent.WritingProcessStep)
                 .SendEventTo(new ProcessFunctionTargetBuilder(writingStep, functionName: "Writing", parameterName: "writingRequest"));
 
-            var test =  writingStep.OnFunctionResult().ToString();
+            writingStep.OnEvent(ContentCreateAutomationEvent.CritiqueProcessStep)
+                .SendEventTo(new ProcessFunctionTargetBuilder(critiqueStep, functionName: "Critique", parameterName: "critiqueRequest"));
+
+            critiqueStep.OnEvent(ContentCreateAutomationEvent.WritingProcessStepRevise)
+                .SendEventTo(new ProcessFunctionTargetBuilder(writingStep, functionName: "Revise", parameterName: "writingReviseRequest"));
 
             finishStep.OnEvent(ContentCreateAutomationEvent.FinishProcessStep)
                 .StopProcess();
@@ -72,13 +77,11 @@ namespace AIContentCreateAutomation.Controllers
 
             await using var runningProcess = await kernelProcess.StartAsync(_Kernel, new KernelProcessEvent() { Id = ContentCreateAutomationEvent.StartProcessStep, Data = request.Keyword });
 
-            var steps = kernelProcess.Steps;
+            //var steps = kernelProcess.Steps;
+            //var writingProps = steps[3];          
+            //return new JsonResult(writingProps.State);
 
-
-
-
-
-
+            
             return new JsonResult("OK");
 
         }
