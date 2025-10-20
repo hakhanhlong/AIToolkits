@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Creating detailed content outline.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 4096,
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "top_k": 40
+    }
+  },
+  "input_variables": [
+    {
+      "name": "keyword",
+      "description": "Keyword or topic content create automation.",
+      "required": true
+    },
+    {
+      "name": "length",
+      "description": "Content length.",
+      "required": true
+    },
+    {
+      "name": "tone",
+      "description": "Content tone.",
+      "required": true
+    },
+    {
+      "name": "type",
+      "description": "Content type.",
+      "required": true
+    },
+    {
+      "name": "demographic",
+      "description": "Content demographic.",
+      "required": true
+    },
+    {
+      "name": "language",
+      "description": "Content language.",
+      "required": true
+    }
+  ]
+}

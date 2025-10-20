@@ -1,0 +1,6 @@
+@AIContentLongForm_HostAddress = http://localhost:5079
+
+GET {{AIContentLongForm_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,17 @@
+﻿<message role="user">
+
+Là một chuyên gia chiến lược nội dung, viết với giọng văn {{$tone}} cho đối tượng {{$demographic}},
+hãy tạo một dàn ý chi tiết cho một bài viết {{$type}} toàn diện về "{{$keyword}}"
+dài khoảng {{$length}} từ bằng {{$language}}.
+
+Dàn ý nên bao gồm:
+1. Một tiêu đề hấp dẫn
+2. 5-7 phần chính với các tiêu đề mô tả
+3. 2-3 tiểu mục dưới mỗi phần chính
+4. Các điểm chính cần trình bày trong mỗi phần
+5. Ý tưởng cho các ví dụ hoặc nghiên cứu điển hình liên quan
+6. Đề xuất các điểm dữ liệu hoặc số liệu thống kê cần đưa vào
+
+Định dạng dàn ý bằng markdown với các tiêu đề và gạch đầu dòng phù hợp.
+
+</message>

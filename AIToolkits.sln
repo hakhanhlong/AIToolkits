@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentConclusion", "AICo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentCreateAutomation", "AIContentCreateAutomation\AIContentCreateAutomation.csproj", "{F55E486C-C6DC-4C8B-A1DA-0D47C016C89D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIContentLongForm", "AIContentLongForm\AIContentLongForm.csproj", "{31F93650-2980-4F3F-8F4A-6D76A7FC20A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{F55E486C-C6DC-4C8B-A1DA-0D47C016C89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55E486C-C6DC-4C8B-A1DA-0D47C016C89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55E486C-C6DC-4C8B-A1DA-0D47C016C89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F93650-2980-4F3F-8F4A-6D76A7FC20A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F93650-2980-4F3F-8F4A-6D76A7FC20A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F93650-2980-4F3F-8F4A-6D76A7FC20A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F93650-2980-4F3F-8F4A-6D76A7FC20A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +92,6 @@ Global
 		{32BBF1DB-82AC-44A5-AFDD-57742AF5BB52} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
 		{DB8AE43F-712F-4CFC-8FAF-8267DBB17106} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
 		{F55E486C-C6DC-4C8B-A1DA-0D47C016C89D} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
+		{31F93650-2980-4F3F-8F4A-6D76A7FC20A8} = {14855669-FE41-4B98-BD4A-D8079D82A61F}
 	EndGlobalSection
 EndGlobal
