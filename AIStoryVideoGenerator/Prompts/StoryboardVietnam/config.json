@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Generate a story based on the given idea using an LLM.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 8192,
+      "temperature": 0.7
+    }
+  },
+  "input_variables": [
+    {
+      "name": "num_scenes",
+      "description": "Number of scenes to generate.",
+      "required": true
+    },
+    {
+      "name": "idea",
+      "description": "The story idea.",
+      "required": true
+    },
+    {
+      "name": "style",
+      "description": "Style of the story.",
+      "required": true
+    }
+  ]
+}
