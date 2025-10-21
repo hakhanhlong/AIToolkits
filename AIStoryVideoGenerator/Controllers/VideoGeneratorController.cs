@@ -191,9 +191,7 @@ namespace AIStoryVideoGenerator.Controllers
                     ThinkingBudget = 0
                 },
                 MaxTokens = 1000,
-                Temperature = 0.7,
-                TopP = 0.9,
-                TopK = 40
+                Temperature = 0.2                
             })
             {
                 ["title"] = title,
