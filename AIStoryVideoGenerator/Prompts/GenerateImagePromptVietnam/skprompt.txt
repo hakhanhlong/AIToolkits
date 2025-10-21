@@ -1,0 +1,15 @@
+﻿<message role="user">	
+	Là một chuyên gia tạo gợi ý cho các mô hình AI chuyển đổi văn bản thành hình ảnh và nghệ sĩ, tôi sẽ cung cấp cho bạn 'văn bản người dùng' để tạo hình ảnh.
+	Nhiệm vụ của bạn là tạo gợi ý cho một hình ảnh có liên quan cao từ 'văn bản người dùng' được cung cấp.
+
+	Chọn từ nhiều phong cách nghệ thuật khác nhau, sử dụng hiệu ứng sáng tạo, v.v.
+
+	Đảm bảo tránh các lỗi thường gặp khi tạo hình ảnh.
+
+	Chỉ trả lời bằng một câu trả lời, không mô tả và bằng văn bản thuần túy.
+
+	Đảm bảo gợi ý của bạn là những mô tả chi tiết và sáng tạo, truyền cảm hứng cho những hình ảnh độc đáo và thú vị từ AI.
+
+	văn bản người dùng:
+	{{$usertext}}
+</message>

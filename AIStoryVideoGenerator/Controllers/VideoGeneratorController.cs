@@ -6,6 +6,7 @@ using Microsoft.SemanticKernel.Connectors.Google;
 using Newtonsoft.Json;
 using System.Text.Json;
 using AIStoryVideoGenerator.ViewModels;
+using Azure.Core;
 
 namespace AIStoryVideoGenerator.Controllers
 {
@@ -58,7 +59,9 @@ namespace AIStoryVideoGenerator.Controllers
                     ThinkingBudget = 0
                 },
                 MaxTokens = 4096,
-                Temperature = 0.7
+                Temperature = 0.7,
+                TopP = 0.9,
+                TopK = 40
             })
             {
                 ["style"] = request.Style,
@@ -90,6 +93,122 @@ namespace AIStoryVideoGenerator.Controllers
             });
 
 
+        }
+
+        [HttpPost]
+        [Route("SceneImages")]
+        public async Task<IActionResult> SceneImages([FromBody] SceneImageRequestViewModel request)
+        {
+
+            var sceneImageResponse = new SceneImageResponseViewModel();
+            sceneImageResponse.Name = request.Storyboard.Name;
+            foreach(var scene in request.Storyboard.Scenes)
+            {
+
+
+                SceneImage sceneImage = new()
+                {
+                    Description = scene.Description,
+                    Narration = scene.Narration,
+                    Prompt = $"Tạo một hình ảnh {request.ImageStyle} đại diện cho cảnh này: {scene.Description}. " +
+                    $"Hình ảnh phải rõ ràng về mặt thị giác và tập trung vào các yếu tố cốt lõi được mô tả."                    
+                };
+
+
+                sceneImage.PromptEnhanced = $"{sceneImage.Prompt}" +
+                    $"Lời nhắc nâng cao:" +
+                    $"{await EnhancedGenerateImagePrompt(sceneImageResponse.Name, scene.Description, scene.Narration, sceneImage.Prompt, request.ImageStyle)}";
+
+                sceneImageResponse.SceneImages.Add(sceneImage);
+            }
+            return new JsonResult(sceneImageResponse);
+        }
+
+
+
+        private async Task<string> GenerateImagePrompt(string userprompt)
+        {
+            var promptFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "GenerateImagePromptVietnam", "skprompt.txt");
+            var configFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "GenerateImagePromptVietnam", "config.json");
+
+            // Read prompt content
+            var promptContent = System.IO.File.ReadAllText(promptFilePath);
+
+            // Read and parse config.json
+            var configJson = System.IO.File.ReadAllText(configFilePath);
+            var configOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var config = PromptTemplateConfig.FromJson(configJson);
+
+
+            // Create the function with both prompt and config
+            //var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent, config.ExecutionSettings["default"]);
+            var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent);
+
+            var kernelArguments = new KernelArguments(new GeminiPromptExecutionSettings
+            {               
+                ThinkingConfig = new GeminiThinkingConfig
+                {
+                    ThinkingBudget = 0
+                },
+                MaxTokens = 1000,
+                Temperature = 0.2
+            })
+            {
+                ["usertext"] = userprompt
+            };
+
+            // Querying the prompt function
+            var response = await promptFunctionFromPrompt.InvokeAsync(_Kernel, kernelArguments);
+
+            var responseData = response.GetValue<string>();
+
+            return responseData;
+        }
+
+
+        private async Task<string> EnhancedGenerateImagePrompt(string title, string description, string content, string user_prompt, string style)
+        {
+            var promptFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "EnhancedGenerateImagePromptVietnam", "skprompt.txt");
+            var configFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "EnhancedGenerateImagePromptVietnam", "config.json");
+
+            // Read prompt content
+            var promptContent = System.IO.File.ReadAllText(promptFilePath);
+
+            // Read and parse config.json
+            var configJson = System.IO.File.ReadAllText(configFilePath);
+            var configOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var config = PromptTemplateConfig.FromJson(configJson);
+
+
+            // Create the function with both prompt and config
+            //var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent, config.ExecutionSettings["default"]);
+            var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent);
+
+            var kernelArguments = new KernelArguments(new GeminiPromptExecutionSettings
+            {
+                ThinkingConfig = new GeminiThinkingConfig
+                {
+                    ThinkingBudget = 0
+                },
+                MaxTokens = 1000,
+                Temperature = 0.7,
+                TopP = 0.9,
+                TopK = 40
+            })
+            {
+                ["title"] = title,
+                ["description"] = description,
+                ["user_prompt"] = user_prompt,
+                ["content"] = content,
+                ["style"] = style
+            };
+
+            // Querying the prompt function
+            var response = await promptFunctionFromPrompt.InvokeAsync(_Kernel, kernelArguments);
+
+            var responseData = response.GetValue<string>();
+
+            return responseData;
         }
 
     }

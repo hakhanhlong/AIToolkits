@@ -1,0 +1,28 @@
+﻿<message role="user">	
+	Là một kỹ sư gợi ý chuyên nghiệp cho các mô hình tạo hình ảnh AI, hãy tạo một gợi ý chi tiết, sáng tạo
+	để tạo ra một hình ảnh chất lượng cao, phù hợp dựa trên bối cảnh sau:
+
+
+	Tiêu đề: {{$title}}
+	Mô tả: {{$description}}
+
+	{{$user_prompt}}
+
+	Trích đoạn nội dung bổ sung:
+
+	{{$content}}
+
+	Nhiệm vụ của bạn là:
+
+	1. Phân tích bối cảnh và nội dung để hiểu chủ đề và chủ thể chính
+
+	2. Tạo một gợi ý phong phú, chi tiết để tạo hình ảnh (50-75 từ)
+
+	3. Bao gồm các chi tiết hình ảnh cụ thể, phong cách {{$style}}, tâm trạng, ánh sáng, bố cục
+
+	4. Đảm bảo gợi ý có liên quan chặt chẽ đến bối cảnh ban đầu
+
+	5. Tránh nội dung bị cấm hoặc bất kỳ nội dung nào vi phạm nguyên tắc tạo hình ảnh
+
+	Chỉ trả lời bằng gợi ý cuối cùng. Không giải thích hoặc văn bản nào khác.
+</message>

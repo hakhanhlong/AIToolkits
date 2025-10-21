@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Given prompt, this functions generated a prompt for image generation.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 2048,
+      "temperature": 0.2
+    }
+  },
+  "input_variables": [
+    {
+      "name": "usertext",
+      "description": "User text for creating images.",
+      "required": true
+    }
+  ]
+}

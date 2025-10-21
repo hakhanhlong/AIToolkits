@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Given prompt, this functions generated a prompt for image generation.",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 2048,
+      "temperature": 0.2
+    }
+  },
+  "input_variables": [
+    {
+      "name": "title",
+      "description": "Title context.",
+      "required": true
+    },
+    {
+      "name": "description",
+      "description": "Description context.",
+      "required": true
+    },
+    {
+      "name": "user_prompt",
+      "description": "User prompt context.",
+      "required": true
+    },
+    {
+      "name": "content",
+      "description": "Content context.",
+      "required": true
+    },
+    {
+      "name": "style",
+      "description": "Style context.",
+      "required": true
+    }
+  ]
+}

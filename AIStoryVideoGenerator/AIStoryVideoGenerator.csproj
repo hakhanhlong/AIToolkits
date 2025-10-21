@@ -17,12 +17,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Prompts\EnhancedGenerateImagePromptVietnam\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Prompts\GenerateImagePromptVietnam\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Prompts\StoryboardVietnam\config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Prompts\EnhancedGenerateImagePromptVietnam\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Prompts\GenerateImagePromptVietnam\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Prompts\StoryboardVietnam\skprompt.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

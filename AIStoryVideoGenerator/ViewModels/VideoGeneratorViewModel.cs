@@ -40,4 +40,39 @@
         public string Narration { get; set; }
     }
 
+
+
+    public class SceneImageRequestViewModel
+    {
+        public StoryboardResponseViewModel Storyboard { get; set; }
+
+
+        /*
+         *  "digital art", nghệ thuật số
+            "cartoon", hoạt hình
+            "watercolor", màu nước
+            "photorealistic", # Changed 'realistic', giống như ảnh thật, thực tế
+            "anime", phim hoạt hình
+            "pixel art", nghệ thuật pixel
+            "oil painting", tranh sơn dầu
+            "line art", nghệ thuật đường nét
+            "cinematic", điện ảnh
+         */
+        public string ImageStyle { get; set; }
+    }
+
+    public class SceneImageResponseViewModel
+    {
+        public string Name { get; set; }
+        public List<SceneImage> SceneImages { get; set; } = new();
+    }
+
+    public class SceneImage
+    {
+        public string Description { get; set; }
+        public string Narration { get; set; }
+        public string Prompt { get; set; }
+        public string PromptEnhanced { get; set; }
+    }
+
 }
