@@ -60,8 +60,7 @@ namespace AIStoryVideoGenerator.Controllers
                 },
                 MaxTokens = 4096,
                 Temperature = 0.7,
-                TopP = 0.9,
-                TopK = 40
+                TopP = 0.9
             })
             {
                 ["style"] = request.Style,
