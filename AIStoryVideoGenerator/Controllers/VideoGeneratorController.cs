@@ -30,6 +30,70 @@ namespace AIStoryVideoGenerator.Controllers
         }
 
 
+
+        [HttpPost]
+        [Route("IdeaGenerate")]
+        public async Task<IActionResult> IdeaGenerate([FromBody] IdeaGenerateRequestViewModel request)
+        {
+            var promptFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "IdeaGeneratePromptVietnam", "skprompt.txt");
+            var configFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Prompts", "IdeaGeneratePromptVietnam", "config.json");
+
+            // Read prompt content
+            var promptContent = System.IO.File.ReadAllText(promptFilePath);
+
+            // Read and parse config.json
+            var configJson = System.IO.File.ReadAllText(configFilePath);
+            var configOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var config = PromptTemplateConfig.FromJson(configJson);
+
+
+            // Create the function with both prompt and config
+            //var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent, config.ExecutionSettings["default"]);
+            var promptFunctionFromPrompt = _Kernel.CreateFunctionFromPrompt(promptContent);
+
+            var kernelArguments = new KernelArguments(new GeminiPromptExecutionSettings
+            {
+                ResponseSchema = typeof(IdeaGenerateResponseViewModel),
+                ResponseMimeType = "application/json",
+                ThinkingConfig = new GeminiThinkingConfig
+                {
+                    ThinkingBudget = 0
+                },
+                MaxTokens = 4096,
+                Temperature = 0.7,
+                TopP = 0.9,
+                TopK = 1
+            })
+            {
+                ["idea_number"] = request.IdeaNumber,
+                ["topic"] = request.Topic                
+            };
+
+            // Querying the prompt function
+            var response = await promptFunctionFromPrompt.InvokeAsync(_Kernel, kernelArguments);
+
+            var metadata = response.Metadata;
+            //var tokenUsage = metadata!["Usage"] as ChatTokenUsage;
+
+            var responseData = response.GetValue<string>();
+
+
+
+            return new JsonResult(
+            new
+            {
+                Data = JsonConvert.DeserializeObject<IdeaGenerateResponseViewModel>(responseData),
+                Info = new
+                {
+                    TotalTokenCount = metadata!["TotalTokenCount"],
+                    PromptTokenCount = metadata!["PromptTokenCount"],
+                    CandidatesTokenCount = metadata!["CandidatesTokenCount"],
+                    CurrentCandidateTokenCount = metadata!["CurrentCandidateTokenCount"]
+                }
+            });
+        }
+
+
         [HttpPost]
         [Route("Storyboard")]
         public async Task<IActionResult> Storyboard([FromBody] StoryboardRequestViewModel request)
@@ -60,7 +124,8 @@ namespace AIStoryVideoGenerator.Controllers
                 },
                 MaxTokens = 4096,
                 Temperature = 0.7,
-                TopP = 0.9
+                TopP = 0.9,
+                TopK = 1
             })
             {
                 ["style"] = request.Style,

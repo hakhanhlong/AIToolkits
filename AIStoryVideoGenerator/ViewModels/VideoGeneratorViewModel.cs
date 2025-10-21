@@ -75,4 +75,23 @@
         public string PromptEnhanced { get; set; }
     }
 
+
+    public class IdeaGenerateRequestViewModel
+    {
+        public int IdeaNumber {  get; set; }
+        public string Topic { get; set; }
+    }
+
+    public class IdeaGenerateResponseViewModel
+    {
+        public List<IdeaStoryViewModel> IdeaStories { get; set; } = new();
+    }
+
+    public class IdeaStoryViewModel
+    {
+        public string Name { get; set; }
+        public string Story { get; set; }
+        public string Genre { get; set; }
+    }
+
 }
